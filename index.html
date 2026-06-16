@@ -809,6 +809,40 @@
       color: var(--gold-dark);
       margin-top: 6px;
     }
+    .dc-fig-desc {
+      display: block;
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--gold-dark);
+      margin-top: 4px;
+      line-height: 1.35;
+    }
+    .dc-avoid-label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-top: 28px;
+      margin-bottom: 14px;
+    }
+    .dc-swatches {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .dc-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(44,30,30,.12);
+      box-shadow: 0 2px 8px rgba(44,30,30,.10);
+      transition: transform .25s ease;
+    }
+    .dc-swatch:hover { transform: scale(1.15); }
 
     /* ── FAMILY ──────────────────────────────────────── */
     #familia { background: var(--surface); text-align: center; }
@@ -3131,22 +3165,32 @@
             <rect class="dc-detail" x="47.5" y="53.5" width="5" height="5" rx="1"/>
           </svg>
           <span class="dc-fig-label">Caballeros</span>
+          <span class="dc-fig-desc">Semi formal o traje</span>
         </div>
 
         <div class="dc-sep-line" aria-hidden="true"></div>
 
         <div class="dc-fig">
-          <svg viewBox="0 0 100 150" role="img" aria-label="Dama, vestimenta formal">
+          <svg viewBox="0 0 100 150" role="img" aria-label="Dama, vestido de noche largo">
             <circle class="dc-head" cx="50" cy="23" r="15"/>
             <path class="dc-body" d="M50 41 C43 41 39 46 38 55 L35 78 C29 96 22 122 20 140 Q20 144 25 144 L75 144 Q80 144 80 140 C78 122 71 96 65 78 L62 55 C61 46 57 41 50 41 Z"/>
             <path class="dc-line" d="M42 50 Q50 58 58 50"/>
             <path class="dc-line" d="M37 80 Q50 86 63 80"/>
           </svg>
           <span class="dc-fig-label">Damas</span>
+          <span class="dc-fig-desc">Vestido de noche largo</span>
         </div>
       </div>
 
-      <p class="dc-avoid fu">Por favor evitar los colores Blanco, Rojo, Negro y Lila/Rosa</p>
+      <p class="dc-avoid-label fu">Colores a evitar</p>
+      <div class="dc-swatches fu">
+        <span class="dc-swatch" style="background:#FFFFFF" title="Blanco" aria-label="Evitar blanco"></span>
+        <span class="dc-swatch" style="background:#ff0000" title="Rojo" aria-label="Evitar rojo"></span>
+        <span class="dc-swatch" style="background:#000000" title="Negro" aria-label="Evitar negro"></span>
+        <span class="dc-swatch" style="background:#cea7d1" title="Lila/Rosa" aria-label="Evitar lila/rosa"></span>
+        <span class="dc-swatch" style="background:#786c6c" title="Gris" aria-label="Evitar gris"></span>
+        <span class="dc-swatch" style="background:#6b0000" title="Vino" aria-label="Evitar vino"></span>
+      </div>
     </section>
 
     <!-- ── 7. FAMILIA ──────────────────────────────── -->
@@ -3176,11 +3220,11 @@
         <div class="fam-members-v2">
           <div class="fam-entry fu">
             <span class="fam-role-v2">papá</span>
-            <span class="fam-name-v2">Sr. Bautista Sanchez</span>
+            <span class="fam-name-v2">Fortino Bautista Castillo</span>
           </div>
           <div class="fam-entry fu">
             <span class="fam-role-v2">mamá</span>
-            <span class="fam-name-v2">Sra. Bautista Sanchez</span>
+            <span class="fam-name-v2">Blanca Imelda Sanchez Rangel</span>
           </div>
         </div>
       </div>
@@ -3193,11 +3237,23 @@
         <div class="fam-members-v2">
           <div class="fam-entry fu">
             <span class="fam-role-v2">papá</span>
-            <span class="fam-name-v2">Sr. Perez Maqueda</span>
+            <span class="fam-name-v2">Alvaro Pérez García</span>
           </div>
           <div class="fam-entry fu">
             <span class="fam-role-v2">mamá</span>
-            <span class="fam-name-v2">Sra. Perez Maqueda</span>
+            <span class="fam-name-v2">Maura Maqueda Martinez</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fam-group-v2 fu">
+        <div class="fam-heading">
+          <span class="fam-script">Padrinos</span>
+        </div>
+        <span class="fam-eyebrow fu">de velación</span>
+        <div class="fam-members-v2">
+          <div class="fam-entry fu">
+            <span class="fam-name-v2">Gabriel Alatriste Sánchez<br>&amp; Samantha Elizabeth Pérez Merino</span>
           </div>
         </div>
       </div>
