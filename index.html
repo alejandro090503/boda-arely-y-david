@@ -1232,7 +1232,7 @@
     body { background: transparent; }
 
     /* Secciones sin fondo explícito — translúcidas SIN backdrop-filter (era causa de stutter en scroll) */
-    #ubicacion, #hospedaje, #calendar, #dresscode, #gifts { background: rgba(250,240,238,.78); }
+    #ubicacion, #calendar, #dresscode, #gifts { background: rgba(250,240,238,.78); }
     #cuenta, #familia, #promesa { background: rgba(245,228,224,.82); }
     #kids-policy, #album, #rsvp { background: linear-gradient(180deg, rgba(245,228,224,.82) 0%, rgba(250,240,238,.82) 100%); }
 
@@ -1795,7 +1795,6 @@
     #cuenta > *:not(.rose-watermark):not(.corner-decor):not(.petals-layer),
     #promesa > *:not(.rose-watermark),
     #ubicacion > *:not(.rose-watermark),
-    #hospedaje > *:not(.rose-watermark),
     #itinerario > *:not(.rose-watermark):not(.corner-decor),
     #dresscode > *:not(.rose-watermark),
     #familia > *:not(.rose-watermark),
@@ -2286,48 +2285,6 @@
       height: 200px;
       border: 0;
       filter: saturate(.92);
-    }
-
-    /* ── HOSPEDAJE ───────────────────────────────────── */
-    #hospedaje { text-align: center; }
-    .hotel-card {
-      max-width: 440px;
-      margin: 12px auto 0;
-      background: var(--surface);
-      border: 1px solid rgba(191,75,75,.16);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 18px 44px rgba(43,36,56,.14);
-    }
-    .hotel-img {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      display: block;
-    }
-    .hotel-body { padding: 26px 26px 30px; }
-    .hotel-eyebrow {
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .hotel-name {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-    .hotel-addr {
-      font-family: var(--serif);
-      font-size: 16px;
-      font-style: italic;
-      color: rgba(44,30,30,.62);
-      margin-bottom: 22px;
     }
 
     /* ══════════════════════════════════════════════════════
