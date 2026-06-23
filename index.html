@@ -591,14 +591,14 @@
        ITINERARY — LUXURY CARD DESIGN
     ══════════════════════════════════════════════════════ */
     #itinerario {
-      background: linear-gradient(180deg, #1A0D10 0%, #2C1E1E 40%, #1A0D10 100%);
+      background: linear-gradient(180deg, #f3eff8 0%, #e8e0f0 40%, #f3eff8 100%);
       padding: 80px 20px;
-      color: var(--crema);
+      color: var(--text);
     }
 
-    #itinerario .label { color: var(--gold); }
-    #itinerario .title { color: var(--crema); font-family: var(--display); font-size: 38px; }
-    #itinerario .subtitle { color: var(--gold-light); }
+    #itinerario .label { color: var(--accent); }
+    #itinerario .title { color: #5a4e7a; font-family: var(--display); font-size: 38px; }
+    #itinerario .subtitle { color: var(--accent); opacity: .8; }
 
     /* ── ITINERARY · CAMINO EN S CON MOVIMIENTO ─────────── */
     .timeline {
@@ -613,16 +613,16 @@
       overflow: visible;
     }
     .tl-svg-bg {
-      stroke: rgba(141,129,181,.22);
+      stroke: rgba(169,156,197,.30);
       stroke-width: 1; fill: none;
       stroke-dasharray: 2 5;
     }
     .tl-svg-path {
-      stroke: var(--gold);
+      stroke: var(--accent);
       stroke-width: 1.6;
       stroke-linecap: round;
       fill: none;
-      filter: drop-shadow(0 0 5px rgba(141,129,181,.45));
+      filter: drop-shadow(0 0 6px rgba(169,156,197,.5));
     }
 
     /* Fila con zig-zag: lado izq y der — texto nunca cruza la línea central */
@@ -651,29 +651,29 @@
     .tl-row-inner::before {
       content: ''; position: absolute; inset: -6px -14px;
       background: radial-gradient(ellipse at center,
-        rgba(43,36,56,.96) 0%,
-        rgba(43,36,56,.6) 55%,
-        rgba(43,36,56,0) 100%);
+        rgba(243,239,248,.95) 0%,
+        rgba(243,239,248,.6) 55%,
+        rgba(243,239,248,0) 100%);
       z-index: -1;
       border-radius: 16px;
       pointer-events: none;
     }
     .tl-t {
       font-family: var(--sans);
-      font-size: 14px; color: var(--gold-light);
+      font-size: 14px; color: var(--accent);
       font-weight: 700;
       letter-spacing: 2px; text-transform: uppercase;
       line-height: 1.1;
     }
     .tl-ev {
       font-family: var(--serif);
-      font-size: 21px; color: var(--crema);
+      font-size: 21px; color: #5a4e7a;
       font-weight: 600; line-height: 1.25;
       margin-top: 5px;
     }
     .tl-de {
       font-family: var(--sans);
-      font-size: 13px; color: var(--crema); opacity: .78;
+      font-size: 13px; color: #5a4e7a; opacity: .72;
       font-weight: 500;
       line-height: 1.55; margin-top: 4px;
     }
@@ -696,8 +696,8 @@
       position: absolute; top: 50%;
       width: 14px; height: 14px; margin-top: -7px;
       border-radius: 50%;
-      background: var(--text);
-      border: 1.5px solid var(--gold);
+      background: #d5cfe8;
+      border: 1.5px solid var(--accent);
       transform: scale(0);
       transition: transform .55s cubic-bezier(.34,1.56,.64,1), box-shadow .55s, background .55s;
       z-index: 2;
@@ -706,11 +706,11 @@
     .tl-row[data-side="right"] .tl-dot { right: 22px; }
     .tl-row.on .tl-dot {
       transform: scale(1);
-      background: var(--gold);
+      background: var(--accent);
       box-shadow:
-        0 0 0 3px rgba(246,242,252,.9),
-        0 0 12px rgba(141,129,181,.6),
-        0 0 24px rgba(141,129,181,.35);
+        0 0 0 3px rgba(213,207,232,.9),
+        0 0 12px rgba(169,156,197,.5),
+        0 0 24px rgba(169,156,197,.3);
     }
 
     /* Orbital decorativo alrededor del dot */
@@ -718,7 +718,7 @@
       position: absolute; top: 50%;
       width: 40px; height: 40px; margin-top: -20px;
       border-radius: 50%;
-      border: 1px dashed rgba(141,129,181,.3);
+      border: 1px dashed rgba(169,156,197,.4);
       opacity: 0;
       animation: tlOrnRotate 22s linear infinite;
       transition: opacity .9s ease;
@@ -734,7 +734,7 @@
       position: absolute; top: 50%;
       width: 18px; height: 18px; margin-top: -9px;
       border-radius: 50%;
-      border: 1.5px solid var(--gold);
+      border: 1.5px solid var(--accent);
       opacity: 0;
       pointer-events: none; z-index: 1;
     }
@@ -3545,7 +3545,7 @@
       { slide: slides[0], trigger: '#hero',        target: 0.35 },
       { slide: slides[1], trigger: '#cuenta',      target: 0.32 },
       { slide: slides[2], trigger: '#ubicacion',   target: 0.30 },
-      { slide: slides[3], trigger: '#itinerario',  target: 0.20 }, // itinerario es oscuro
+      { slide: slides[3], trigger: '#itinerario',  target: 0.32 },
       { slide: slides[4], trigger: '#dresscode',   target: 0.32 }
     ];
 
