@@ -2466,7 +2466,7 @@
   </button>
 
   <!-- Ed Sheeran - Perfect -->
-  <audio id="bg-audio" loop preload="none" aria-hidden="true">
+  <audio id="bg-audio" loop preload="metadata" aria-hidden="true">
     <source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/boda-arely-y-david/cancion.mp3" type="audio/mpeg" />
   </audio>
 
@@ -3187,14 +3187,24 @@
 
   function playMusic() {
     if (_on) return Promise.resolve();
+    bgAudio.load();
     return bgAudio.play().then(function () {
       fadeVolume(0.55, 2000);
       musicBtn.classList.add('playing');
       icoPlay.style.display  = 'none';
       icoPause.style.display = '';
       _on = true;
-    }).catch(function (e) {
-      console.warn('Audio bloqueado:', e);
+    }).catch(function () {
+      bgAudio.muted = true;
+      bgAudio.play().then(function () {
+        bgAudio.muted = false;
+        bgAudio.volume = 0;
+        fadeVolume(0.55, 2000);
+        musicBtn.classList.add('playing');
+        icoPlay.style.display  = 'none';
+        icoPause.style.display = '';
+        _on = true;
+      }).catch(function () {});
     });
   }
   function pauseMusic() {
@@ -3205,7 +3215,16 @@
     icoPause.style.display = 'none';
     _on = false;
   }
-  // Expuesto para iniciar la música al abrir el sobre (gesto del usuario)
+
+  var _audioPreloaded = false;
+  function preloadAudio() {
+    if (_audioPreloaded) return;
+    _audioPreloaded = true;
+    bgAudio.load();
+  }
+  document.addEventListener('touchstart', preloadAudio, { once: true, passive: true });
+  document.addEventListener('mousedown', preloadAudio, { once: true, passive: true });
+
   window.__elysiumPlayMusic = playMusic;
 
   musicBtn.addEventListener('click', function () {
@@ -3303,8 +3322,11 @@
       if (opened) return;
       opened = true;
 
-      // Iniciar música automáticamente — este tap cuenta como gesto del usuario
-      if (window.__elysiumPlayMusic) { try { window.__elysiumPlayMusic(); } catch (e) {} }
+      // Iniciar música — este tap es gesto del usuario (desbloquea autoplay)
+      if (window.__elysiumPlayMusic) {
+        try { window.__elysiumPlayMusic(); } catch (e) {}
+        setTimeout(function () { if (!_on && window.__elysiumPlayMusic) { try { window.__elysiumPlayMusic(); } catch (e) {} } }, 800);
+      }
 
       // Detener cualquier tween de la imagen
       gsap.killTweensOf(envImage);
