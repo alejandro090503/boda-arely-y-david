@@ -629,7 +629,7 @@ body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',ser
     <span class="eyebrow">Confirmación</span>
     <h2 class="heading-sm">¿Nos acompañas?</h2>
     <div class="orn" style="margin-top:16px;margin-bottom:24px"><div class="orn-line"></div><div class="orn-diamond-sm"></div><div class="orn-diamond"></div><div class="orn-diamond-sm"></div><div class="orn-line"></div></div>
-    <span class="rsvp-deadline">Confirma antes del 20 de Mayo · 2028</span>
+    <span class="rsvp-deadline">Confirma antes del 2 de Febrero · 2028</span>
     <div class="card rv" style="max-width:380px;margin:0 auto;text-align:center;padding:32px 26px">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--text);line-height:1.7;margin-bottom:22px">Tu compañía es lo más importante.<br>Confirma tu asistencia para reservar tu lugar en nuestra celebración.</p>
 
@@ -882,7 +882,7 @@ function initMain(){
   (function initRsvpPanel(){
     var PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
     var RSVP_URL  = 'https://boda-arely-y-david.vercel.app';
-    var DEADLINE  = new Date(2028, 4, 20, 23, 59, 59, 999);
+    var DEADLINE  = new Date(2028, 1, 2, 23, 59, 59, 999);
     var frozen    = Date.now() > DEADLINE.getTime();
     var params    = new URLSearchParams(window.location.search);
     var urlPara   = (params.get('para')  || '').trim();
